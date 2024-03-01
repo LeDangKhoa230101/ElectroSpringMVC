@@ -2,14 +2,17 @@ package ElectroMVC.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class HomeController {
+public class HomeController extends BaseController{
 	
 	@RequestMapping("/")
-	public String index() {
-		return "index";
+	public ModelAndView index() {
+		_mvShare.addObject("slides", _homeService.GetDataSlide());
+		_mvShare.addObject("products", _homeService.GetDataProducts());
+		_mvShare.setViewName("index");
+		return _mvShare;
 	}
 	
 }
