@@ -80,7 +80,7 @@
 							<h3 class="aside-title">Top selling</h3>
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="/assets/user/img/product01.png" alt="">
+									<img src="<c:url value="/assets/user/img/product01.png"/>" alt="">
 								</div>
 								<div class="product-body">
 									<p class="product-category">Category</p>
@@ -91,7 +91,7 @@
 
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="/assets/user/img/product02.png" alt="">
+									<img src="<c:url value="/assets/user/img/product02.png"/>" alt="">
 								</div>
 								<div class="product-body">
 									<p class="product-category">Category</p>
@@ -102,7 +102,7 @@
 
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="/assets/user/img/product03.png" alt="">
+									<img src="<c:url value="/assets/user/img/product03.png"/>" alt="">
 								</div>
 								<div class="product-body">
 									<p class="product-category">Category</p>
@@ -149,13 +149,9 @@
 							<c:forEach var="item" items="${ ProductsPaginate }">
 								<div class="col-md-4 col-xs-6">
 									<div class="product">
-										<div class="product-img">
+										<a href='<c:url value="/detail/${ item.id_product }"/>' class="product-img" style="display: block;">
 											<img src="${item.img}" alt="">
-											<div class="product-label">
-												<span class="sale">-30%</span>
-												<span class="new">NEW</span>
-											</div>
-										</div>
+										</a> 
 										<div class="product-body">
 											<p class="product-category">Category</p>
 											<h3 class="product-name"><a href="#">${item.name}</a></h3>
