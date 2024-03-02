@@ -10,7 +10,7 @@ import ElectroMVC.Dto.ProductsDtoMapper;
 @Repository
 public class ProductsDao extends BaseDao {
 	
-	private String SqlString() {
+	private StringBuffer SqlString() {
 		StringBuffer  sql = new StringBuffer();
 		sql.append("SELECT ");
 		sql.append("p.id as id_product ");
@@ -33,14 +33,40 @@ public class ProductsDao extends BaseDao {
 		sql.append("INNER JOIN ");
 		sql.append("colors AS c ");
 		sql.append("ON p.id = c.id_product ");
-		sql.append("GROUP BY p.id, c.id_product ");
-		sql.append("ORDER BY RAND()");
-		return sql.toString();
+		return sql;
 	}
 	
 	public List<ProductsDto> GetDataProducts() {
-		String sql = SqlString();
+		StringBuffer sql = SqlString();
+		sql.append("GROUP BY p.id, c.id_product ");
+		sql.append("ORDER BY RAND()");
+		List<ProductsDto> listProducts = _jdbcTemplate.query(sql.toString(), new ProductsDtoMapper());
+		return listProducts;
+	}
+	
+	private StringBuffer SqlProductByID(int id) {
+		StringBuffer sql = SqlString();
+		sql.append("WHERE 1 = 1 ");
+		sql.append("AND id_category = " + id + " ");
+		return sql;
+	}
+	
+	private String SqlProductPaginates(int id, int start, int totalPage) {
+		StringBuffer sql = SqlProductByID(id);
+		sql.append("LIMIT " + start + ", " + totalPage);
+		return sql.toString();
+	}
+	
+	public List<ProductsDto> GetAllProductsByID(int id) {
+		String sql = SqlProductByID(id).toString();
 		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return listProducts;
 	}
+	
+	public List<ProductsDto> GetDataProductsPaginates(int id, int start, int totalPage) {
+		String sql = SqlProductPaginates(id, start, totalPage);
+		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		return listProducts;
+	}
+	
 }

@@ -3,6 +3,25 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <title>Home</title>
 <body>
+<!-- NAVIGATION -->
+<nav id="navigation">
+	<!-- container -->
+	<div class="container">
+		<!-- responsive-nav -->
+		<div id="responsive-nav">
+			<!-- NAV -->
+			<ul class="main-nav nav navbar-nav">
+				<c:forEach var="item" items="${categorys}">
+					<li><a href='<c:url value="/store/${ item.id }"/>'>${item.name}</a></li>
+				</c:forEach>
+			</ul>
+			<!-- /NAV -->
+		</div>
+		<!-- /responsive-nav -->
+	</div>
+	<!-- /container -->
+</nav>
+<!-- /NAVIGATION -->
 	<!-- SECTION -->
 		<div class="section">
 			<!-- container -->

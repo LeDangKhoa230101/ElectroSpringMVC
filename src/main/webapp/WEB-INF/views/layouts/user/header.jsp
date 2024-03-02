@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <header>
 	<!-- TOP HEADER -->
 	<div id="top-header">
@@ -28,7 +29,7 @@
 				<!-- LOGO -->
 				<div class="col-md-3">
 					<div class="header-logo">
-						<a href="#" class="logo"> <img src="assets/user/img/logo.png" alt="">
+						<a href='<c:url value="/home" />' class="logo"> <img src="<c:url value="/assets/user/img/logo.png"/>" alt="">
 						</a>
 					</div>
 				</div>
@@ -133,23 +134,3 @@
 	<!-- /MAIN HEADER -->
 </header>
 <!-- /HEADER -->
-
-<!-- NAVIGATION -->
-<nav id="navigation">
-	<!-- container -->
-	<div class="container">
-		<!-- responsive-nav -->
-		<div id="responsive-nav">
-			<!-- NAV -->
-			<ul class="main-nav nav navbar-nav">
-				<c:forEach var="item" items="${categorys}">
-					<li><a href="#">${item.name}</a></li>
-				</c:forEach>
-			</ul>
-			<!-- /NAV -->
-		</div>
-		<!-- /responsive-nav -->
-	</div>
-	<!-- /container -->
-</nav>
-<!-- /NAVIGATION -->

@@ -16,20 +16,20 @@
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
 		<!-- Bootstrap -->
-		<link type="text/css" rel="stylesheet" href="<c:url value="assets/user/css/bootstrap.min.css"/> "/>
+		<link type="text/css" rel="stylesheet" href="<c:url value="/assets/user/css/bootstrap.min.css"/> "/>
 
 		<!-- Slick -->
-		<link type="text/css" rel="stylesheet" href="<c:url value="assets/user/css/slick.css"/> "/>
-		<link type="text/css" rel="stylesheet" href="<c:url value="assets/user/css/slick-theme.css"/> "/>
+		<link type="text/css" rel="stylesheet" href="<c:url value="/assets/user/css/slick.css"/> "/>
+		<link type="text/css" rel="stylesheet" href="<c:url value="/assets/user/css/slick-theme.css"/> "/>
 
 		<!-- nouislider -->
-		<link type="text/css" rel="stylesheet" href="<c:url value="assets/user/css/nouislider.min.css"/> "/>
+		<link type="text/css" rel="stylesheet" href="<c:url value="/assets/user/css/nouislider.min.css"/> "/>
 
 		<!-- Font Awesome Icon -->
-		<link rel="stylesheet" href="<c:url value="assets/user/css/font-awesome.min.css"/> ">
+		<link rel="stylesheet" href="<c:url value="/assets/user/css/font-awesome.min.css"/> ">
 
 		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="<c:url value="assets/user/css/style.css"/> "/>
+		<link type="text/css" rel="stylesheet" href="<c:url value="/assets/user/css/style.css"/> "/>
 
     </head>
 	<body>
