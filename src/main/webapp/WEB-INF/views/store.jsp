@@ -170,7 +170,10 @@
 											</div>
 										</div>
 										<div class="add-to-cart">
-											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+											<button type="button" class="add-to-cart-btn">
+												<i class="fa fa-shopping-cart"></i> 
+												add to cart
+											</button>
 										</div>
 									</div>
 								</div>
@@ -182,9 +185,7 @@
 
 						<!-- store bottom filter -->
 						<div class="store-filter clearfix">
-							<span class="store-qty">Showing 20-100 products</span>
 							<ul class="store-pagination">
-								<li><a href="#"><i class="fa fa-angle-left"></i></a></li>
 								<c:forEach var="item" begin="1" end="${ paginateInfo.totalPage }" varStatus="loop">
 									<c:if test="${ loop.index == paginateInfo.currentPage }">
 										<li class="active">
@@ -197,7 +198,6 @@
 										</li>
 									</c:if>
 								</c:forEach>
-								<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
 							</ul>
 						</div>
 						<!-- /store bottom filter -->

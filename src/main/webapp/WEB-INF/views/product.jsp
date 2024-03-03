@@ -51,8 +51,8 @@
 				<!-- /Product thumb imgs -->
 
 				<!-- Product details -->
-				<div class="col-md-5">
-					<div class="product-details">
+				<div class="col-md-5"> 
+					<form method="get" action="<c:url value="/addCart/${ product.id_product }"/>" class="product-details">
 						<h2 class="product-name">${ product.name }</h2>
 						<div> 
 							<div class="product-rating">
@@ -91,11 +91,11 @@
 									<span class="qty-down">-</span>
 								</div>
 							</div>
-							<button class="add-to-cart-btn">
+							<button type="submit" class="add-to-cart-btn">
 								<i class="fa fa-shopping-cart"></i> 
 								add to cart
 							</button>
-						</div>
+						</div> 
 
 						<ul class="product-btns">
 							<li><a href="#"><i class="fa fa-heart-o"></i> add to
@@ -118,7 +118,7 @@
 							<li><a href="#"><i class="fa fa-envelope"></i></a></li>
 						</ul>
 
-					</div>
+					</form>
 				</div>
 				<!-- /Product details -->
 
