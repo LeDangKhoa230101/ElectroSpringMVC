@@ -86,7 +86,7 @@
                     <ul style="background-color: #f4f2f8; padding: 30px;">
                         <li style=" display: flex; align-items: center; justify-content: space-between; font-size: 16px; margin-bottom: 20px;">
                             <span>Subtotal</span>
-                            <span>${ TotalPriceCart }</span>
+                            <span>$${ TotalPriceCart }</span>
                         </li>
                         <li style=" display: flex; align-items: center; justify-content: space-between; font-size: 16px; margin-bottom: 20px;">
                             <span>Shipping</span>
@@ -96,11 +96,11 @@
                             <span>
                                 <strong>Total</strong>
                             </span> <span>
-                                <strong>${ TotalPriceCart }</strong>
+                                <strong>$${ TotalPriceCart }</strong>
                             </span>
                         </li>
                     </ul>
-                    <a style="display: block; height: 40px; background: #d10024; color: white; font-size: 18px; font-weight: 600; text-align: center; padding: 7px 0;">
+                    <a href="<c:url value="/checkout"/>" style="display: block; height: 40px; background: #d10024; color: white; font-size: 18px; font-weight: 600; text-align: center; padding: 7px 0;">
                         Checkout
                     </a>
                 </div>
