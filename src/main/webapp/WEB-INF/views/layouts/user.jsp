@@ -3,6 +3,7 @@
 <%@taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +31,9 @@
 
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="<c:url value="/assets/user/css/style.css"/> "/>
-
+		
+		<link type="text/css" rel="stylesheet" href="<c:url value="/assets/user/css/user.css"/> "/>
+		
     </head>
 	<body>
 		<!-- HEADER -->

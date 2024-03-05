@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <header>
 	<!-- TOP HEADER -->
 	<div id="top-header">
@@ -13,8 +13,14 @@
 						Stonecoal Road</a></li>
 			</ul>
 			<ul class="header-links pull-right">
-				<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-				<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+				<c:if test="${ empty LoginInfo }">
+					<li><a href="<c:url value="/login"/>"><i class="fa fa-user-o"></i>Login</a></li>
+					<li><a href="<c:url value="/signup"/>"><i class="fa fa-user-o"></i>Signup</a></li>
+				</c:if>
+				<c:if test="${ not empty LoginInfo }">
+					<li><a href="#"><i class="fa fa-user-o"></i>${ LoginInfo.display_name }</a></li>
+					<li><a href="<c:url value="/logout"/>"><i class="fa fa-user-o"></i>Logout</a></li>
+				</c:if>
 			</ul>
 		</div>
 	</div>

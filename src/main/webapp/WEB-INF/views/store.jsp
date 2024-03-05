@@ -147,7 +147,7 @@
 						<div class="row">
 							<!-- product -->
 							<c:forEach var="item" items="${ ProductsPaginate }">
-								<div class="col-md-4 col-xs-6">
+								<form method="get" action="<c:url value="/addCart/${ item.id_product }"/>" class="col-md-4 col-xs-6">
 									<div class="product">
 										<a href='<c:url value="/detail/${ item.id_product }"/>' class="product-img" style="display: block;">
 											<img src="${item.img}" alt="">
@@ -170,13 +170,13 @@
 											</div>
 										</div>
 										<div class="add-to-cart">
-											<button type="button" class="add-to-cart-btn">
+											<button type="submit" class="add-to-cart-btn">
 												<i class="fa fa-shopping-cart"></i> 
 												add to cart
-											</button>
+											</button> 
 										</div>
 									</div>
-								</div>
+								</form>
 							</c:forEach>
 							<!-- /product -->
 
